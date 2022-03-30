@@ -1,0 +1,52 @@
+{
+  "root": "packages/card-game-war",
+  "sourceRoot": "packages/card-game-war/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/card-game-war",
+        "main": "packages/card-game-war/src/main.ts",
+        "tsConfig": "packages/card-game-war/tsconfig.app.json",
+        "assets": ["packages/card-game-war/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/card-game-war/src/environments/environment.ts",
+              "with": "packages/card-game-war/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "card-game-war:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/card-game-war/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/card-game-war"],
+      "options": {
+        "jestConfig": "packages/card-game-war/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
