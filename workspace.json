@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "projects": {
+    "card-game-war": "packages/card-game-war"
+  }
+}
