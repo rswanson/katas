@@ -1,1 +1,1 @@
-export * from './lib/card-game-war';
+export * from './lib/card-game-war-dumb';
