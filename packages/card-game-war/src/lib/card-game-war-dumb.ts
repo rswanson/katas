@@ -1,8 +1,4 @@
-import { Random, MersenneTwister19937 } from "random-js";
-const random = new Random(MersenneTwister19937.autoSeed());
-
-
-enum Suit {
+export enum Suit {
   Clubs,
   Diamonds,
   Hearts,
