@@ -28,17 +28,22 @@ export class Card implements CardType {
   }
 }
 export class Deck implements DeckType {
-  cards: Array<Card>;
-  for (let suit = 0; suit < 4; suit++) {
-    for (let value = 2; value < 14; value++) {
-      if (suit == 0)
-        this.cards[value-2] = new Card(Suit["Clubs"],value)
-      if (suit == 1)
-        this.cards[value-2] = new Card(Suit["Diamonds"],value)
-      if (suit == 2)
-        this.cards[value-2] = new Card(Suit["Hearts"],value)
-      if (suit == 3)
-        this.cards[value-2] = new Card(Suit["Spades"],value)
+  cards: Array<Card> = [];
+  currentPosition = 0;
+  constructor() {
+    let count = 0;
+    for (let suit = 0; suit < 4; suit++) {
+      for (let value = 2; value <= 14; value++) {
+        if (suit == 0)
+          this.cards[count] = new Card(Suit["Clubs"],value);
+        if (suit == 1)
+          this.cards[count] = new Card(Suit["Diamonds"],value);
+        if (suit == 2)
+          this.cards[count] = new Card(Suit["Hearts"],value);
+        if (suit == 3)
+          this.cards[count] = new Card(Suit["Spades"],value);
+        count++
+      }
     }
   }
 };
@@ -52,6 +57,5 @@ export function doesMyCardWin(myCard: Card, notMyCard: Card): boolean {
 }
 
 export function cardGameWarDumb(): string {
-  console.log( draw())
   return 'card-game-war';
 }
