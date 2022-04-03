@@ -8,6 +8,7 @@ describe('the basics', () => {
     const deck = new Deck();
     expect(deck.cards.length).toBe(52);
     for (let i = 0; i < 52; i++)  {
+      expect(deck.cards[i]).toBeInstanceOf(Card)
       const val: number = (i % 13) + 2;
       expect(deck.cards[i].value).toEqual(val);
     }
