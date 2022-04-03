@@ -1,3 +1,4 @@
+import { assert, Console } from 'console';
 import exp = require('constants');
 import { cardGameWarDumb, Deck, Card } from './card-game-war-dumb';
 
@@ -10,9 +11,13 @@ describe('the basics', () => {
   //   expect(drawResult >= 2)
   //   expect(drawResult <= 14)
   // });
-  it('should have a deck that actually has cards in it', () => {
-    const deck = new Deck();  
-    expect(deck.cards[0].value == 2)
+  it('should initialize a new 52 card deck without shuffling', () => {
+    const deck = new Deck();
+    // expect(deck.cards.length).toBe(52);
+    for (let i = 0; i < 52; i++)  {
+      const val: number = (i % 13) + 2;
+      expect(deck.cards[i].value).toEqual(val);
+    }
   });
   // it('should tell me my card is bigger')
 });
