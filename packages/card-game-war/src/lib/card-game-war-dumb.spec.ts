@@ -1,5 +1,3 @@
-import { assert, Console } from 'console';
-import exp = require('constants');
 import { cardGameWarDumb, Deck, Card, Suit, doesMyCardWin } from './card-game-war-dumb';
 
 describe('the basics', () => {
