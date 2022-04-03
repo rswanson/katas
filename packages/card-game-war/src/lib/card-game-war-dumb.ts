@@ -1,4 +1,4 @@
-export enum Suit {
+export const enum Suit {
   Clubs,
   Diamonds,
   Hearts,
@@ -18,7 +18,6 @@ export class Card implements CardType {
   suit: Suit;
   value: number;
   constructor(suit: Suit, value: number) {
-    // this.name = name;
     this.suit = suit;
     this.value = value;
   }
@@ -27,19 +26,16 @@ export class Deck implements DeckType {
   cards: Array<Card> = [];
   currentPosition = 0;
   constructor() {
-    let count = 0;
-    for (let suit = 0; suit < 4; suit++) {
-      for (let value = 2; value <= 14; value++) {
-        if (suit == 0)
-          this.cards[count] = new Card(Suit["Clubs"],value);
-        if (suit == 1)
-          this.cards[count] = new Card(Suit["Diamonds"],value);
-        if (suit == 2)
-          this.cards[count] = new Card(Suit["Hearts"],value);
-        if (suit == 3)
-          this.cards[count] = new Card(Suit["Spades"],value);
-        count++
-      }
+    // Uses % 13 + 2 for the value so that Ace is high
+    for (let i = 0; i < 52; i++) {
+      if (i < 13)
+        this.cards[i] = new Card(Suit.Clubs,(i%13)+2);
+      if ( i > 12  && i < 26)
+        this.cards[i] = new Card(Suit.Diamonds,(i%13)+2);
+      if ( i > 25  && i < 39)
+        this.cards[i] = new Card(Suit.Hearts,(i%13)+2);
+      if ( i > 38)
+        this.cards[i] = new Card(Suit.Spades,(i%13)+2);
     }
   }
 };
