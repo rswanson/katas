@@ -1,4 +1,4 @@
-import { cardGameWarDumb, War, Card, Suit, doesMyCardWin } from './card-game-war-dumb';
+import { cardGameWarDumb, War, Suit, doesMyCardWin } from './card-game-war-dumb';
 
 describe('the basics', () => {
   it('should work', () => {
