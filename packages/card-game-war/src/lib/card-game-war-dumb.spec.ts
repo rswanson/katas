@@ -1,11 +1,11 @@
-import { cardGameWarDumb, War, Suit, doesMyCardWin } from './card-game-war-dumb';
+import { cardGameDeckDumb, Deck, Suit, doesMyCardWin } from './card-game-war-dumb';
 
 describe('the basics', () => {
   it('should work', () => {
-    expect(cardGameWarDumb()).toEqual('card-game-war');
+    expect(cardGameDeckDumb()).toEqual('card-game-war');
   });
   it('should initialize a new 52 card deck without shuffling', () => {
-    const deck = new War();
+    const deck = new Deck();
     expect(deck.cards.length).toBe(52);
     for (let i = 0; i < 52; i++)  {
       const val: number = (i % 13) + 2;
@@ -13,15 +13,15 @@ describe('the basics', () => {
     }
   });
   it('should draw a card', () => {
-    const deck: War = new War();
+    const deck: Deck = new Deck();
     const dummyCard = deck.draw();
     expect(dummyCard).toHaveProperty("suit");
     expect(dummyCard).toHaveProperty("value");
   });
   it('should not match an unshuffled deck after shuffling', () => {
-    const shuffledDeck: War = new War();
+    const shuffledDeck: Deck = new Deck();
     shuffledDeck.shuffle();
-    const unshuffledDeck: War = new War(); 
+    const unshuffledDeck: Deck = new Deck(); 
     expect(shuffledDeck.cards).not.toMatchObject(unshuffledDeck.cards)
   });
 

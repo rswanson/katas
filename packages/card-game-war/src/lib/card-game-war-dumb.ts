@@ -4,18 +4,23 @@ export enum Suit {
   Hearts,
   Spades,
 }
-export type Card = {
+type Card = {
   name?: string;
   suit: Suit,
   value: number,
 }
 
-interface Deck {
+type Hand = {
+  cards: Array<Card>
+}
+
+interface BasicDeck {
   cards: Array<Card>;
   draw: () => Card;
   shuffle: () => void;
 }
-export class War implements Deck {
+
+export class Deck implements BasicDeck {
   cards: Array<Card> = [];
   constructor() {
     let count = 0;
@@ -61,6 +66,6 @@ export function doesMyCardWin(myCard: Card, notMyCard: Card): boolean {
   return myCard.value > notMyCard.value;
 }
 
-export function cardGameWarDumb(): string {
+export function cardGameDeckDumb(): string {
   return 'card-game-war';
 }
