@@ -13,15 +13,19 @@ describe('the basics', () => {
       expect(deck.cards[i].value).toEqual(val);
     }
   });
-  it('should first draw an ace of spades in an unshuffled deck', () => {
+  it('should draw a card', () => {
     const deck: War = new War();
-    const firstCard: Card = deck.draw();
-    expect(firstCard.value).toEqual(14)
-    expect(firstCard.suit).toEqual(Suit.Spades)
-    const secondCard: Card = deck.draw();
-    expect(secondCard.value).toEqual(13)
-    expect(secondCard.suit).toEqual(Suit.Spades)
+    const dummyCard = deck.draw();
+    expect(dummyCard).toHaveProperty("suit");
+    expect(dummyCard).toHaveProperty("value");
   });
+  it('should not match an unshuffled deck after shuffling', () => {
+    const shuffledDeck: War = new War();
+    shuffledDeck.shuffle();
+    const unshuffledDeck: War = new War(); 
+    expect(shuffledDeck.cards).not.toMatchObject(unshuffledDeck.cards)
+  });
+
   it('should be able to tell you if your card wins or not', () => {
     const myCard = { "suit": Suit.Clubs, "value": 4};
     const enemyCard = { "suit": Suit.Clubs, "value": 2}
