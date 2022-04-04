@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "card-game-war": "packages/card-game-war"
+    "card-game-war": "packages/card-game-war",
+    "kata-cli": "packages/kata-cli"
   }
 }

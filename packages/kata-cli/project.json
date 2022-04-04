@@ -1,0 +1,32 @@
+{
+  "root": "packages/kata-cli",
+  "sourceRoot": "packages/kata-cli/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/kata-cli",
+        "main": "packages/kata-cli/src/index.ts",
+        "tsConfig": "packages/kata-cli/tsconfig.lib.json",
+        "assets": ["packages/kata-cli/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/kata-cli/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/kata-cli"],
+      "options": {
+        "jestConfig": "packages/kata-cli/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

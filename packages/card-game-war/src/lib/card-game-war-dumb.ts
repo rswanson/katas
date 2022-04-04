@@ -44,10 +44,6 @@ export class Deck implements DeckType {
   }
 };
 
-// export function draw(deck: Deck, position: number): Card {
-//   return deck[position];
-// }
-
 export function doesMyCardWin(myCard: Card, notMyCard: Card): boolean {
   return myCard["value"] > notMyCard["value"];
 }
