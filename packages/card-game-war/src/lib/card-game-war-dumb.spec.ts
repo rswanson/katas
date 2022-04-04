@@ -1,4 +1,3 @@
-import exp = require('constants');
 import { cardGameWarDumb, War, Card, Suit, doesMyCardWin } from './card-game-war-dumb';
 
 describe('the basics', () => {
