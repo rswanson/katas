@@ -12,7 +12,6 @@
 
 - Tests:
   `nx run card-game-war:test`
-  
 
 **TODO**
 
