@@ -4,50 +4,68 @@ export const enum Suit {
   Hearts,
   Spades,
 }
-type CardType = {
-  // name: string;
-  suit: Suit;
-  value: number;
+type Card = {
+  name?: string;
+  suit: Suit,
+  value: number,
 }
 
-type DeckType = {
-  cards: Array<CardType>;
-  currentPosition: number
+type Hand = {
+  cards: Array<Card>
 }
-export class Card implements CardType {
-  suit: Suit;
-  value: number;
-  constructor(suit: Suit, value: number) {
-    this.suit = suit;
-    this.value = value;
-  }
+
+interface BasicDeck {
+  cards: Array<Card>;
+  draw: () => Card;
+  shuffle: () => void;
 }
-export class Deck implements DeckType {
+
+export class Deck implements BasicDeck {
   cards: Array<Card> = [];
-  currentPosition = 0;
   constructor() {
-    // Uses % 13 + 2 for the value so that Ace is high
-    for (let i = 0; i < 52; i++) {
-      if (i < 13)
-        this.cards[i] = new Card(Suit.Clubs,(i%13)+2);
-      if ( i > 12  && i < 26)
-        this.cards[i] = new Card(Suit.Diamonds,(i%13)+2);
-      if ( i > 25  && i < 39)
-        this.cards[i] = new Card(Suit.Hearts,(i%13)+2);
-      if ( i > 38)
-        this.cards[i] = new Card(Suit.Spades,(i%13)+2);
+    let count = 0;
+    for (let suit = 0; suit < 4; suit++) {
+      for (let value = 2; value <= 14; value++) {
+        if (suit == 0)
+          this.cards[count] = { "suit": Suit.Clubs, "value": value};
+        if (suit == 1)
+          this.cards[count] = { "suit": Suit.Diamonds, "value": value};
+        if (suit == 2)
+          this.cards[count] = { "suit": Suit.Hearts, "value": value};
+        if (suit == 3)
+          this.cards[count] = { "suit": Suit.Spades, "value": value};
+        count++
+      }
     }
+  };
+
+  draw(): Card {
+    const drawCard = this.cards[this.cards.length-1];
+    this.cards.pop()
+    return drawCard;
   }
+
+  shuffle(): void {
+    let currentIndex = this.cards.length,  randomIndex;
+
+      // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [this.cards[currentIndex], this.cards[randomIndex]] = [
+        this.cards[randomIndex], this.cards[currentIndex]];
+    }
+  };
 };
 
-// export function draw(deck: Deck, position: number): Card {
-//   return deck[position];
-// }
-
 export function doesMyCardWin(myCard: Card, notMyCard: Card): boolean {
-  return myCard["value"] > notMyCard["value"];
+  return myCard.value > notMyCard.value;
 }
 
-export function cardGameWarDumb(): string {
+export function cardGameDeckDumb(): string {
   return 'card-game-war';
 }

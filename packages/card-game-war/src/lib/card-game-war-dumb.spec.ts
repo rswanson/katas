@@ -1,10 +1,8 @@
-import { assert, Console } from 'console';
-import exp = require('constants');
-import { cardGameWarDumb, Deck, Card, Suit, doesMyCardWin } from './card-game-war-dumb';
+import { cardGameDeckDumb, Deck, Suit, doesMyCardWin } from './card-game-war-dumb';
 
 describe('the basics', () => {
   it('should work', () => {
-    expect(cardGameWarDumb()).toEqual('card-game-war');
+    expect(cardGameDeckDumb()).toEqual('card-game-war');
   });
   it('should initialize a new 52 card deck without shuffling', () => {
     const deck = new Deck();
@@ -23,10 +21,23 @@ describe('the basics', () => {
 
     }
   });
+  it('should draw a card', () => {
+    const deck: Deck = new Deck();
+    const dummyCard = deck.draw();
+    expect(dummyCard).toHaveProperty("suit");
+    expect(dummyCard).toHaveProperty("value");
+  });
+  it('should not match an unshuffled deck after shuffling', () => {
+    const shuffledDeck: Deck = new Deck();
+    shuffledDeck.shuffle();
+    const unshuffledDeck: Deck = new Deck(); 
+    expect(shuffledDeck.cards).not.toMatchObject(unshuffledDeck.cards)
+  });
+
   it('should be able to tell you if your card wins or not', () => {
-    const myCard = new Card(Suit.Clubs,4);
-    const enemyCard = new Card(Suit.Spades,2);
-    expect(doesMyCardWin(myCard,enemyCard)).toEqual(true);
+    const myCard = { "suit": Suit.Clubs, "value": 4};
+    const enemyCard = { "suit": Suit.Clubs, "value": 2}
+    expect(doesMyCardWin(myCard,enemyCard)).toBe(true)
   });
   // it('should tell me my card is bigger')
 });

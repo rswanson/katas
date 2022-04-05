@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'card-game-war',
+  displayName: 'kata-cli',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
@@ -10,7 +10,5 @@ module.exports = {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/packages/card-game-war',
-  coverageReporters: ['text-summary','clover','html'],
-  collectCoverage: true,
+  coverageDirectory: '../../coverage/packages/kata-cli',
 };

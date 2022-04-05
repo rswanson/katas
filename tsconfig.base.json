@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@katas/card-game-war": ["packages/card-game-war/src/index.ts"]
+      "@katas/card-game-war": ["packages/card-game-war/src/index.ts"],
+      "@katas/kata-cli": ["packages/kata-cli/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
