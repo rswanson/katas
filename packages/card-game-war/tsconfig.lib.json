@@ -3,9 +3,9 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "declaration": true,
-    "types": ["jest", "mocha"]
+    "types": ["jest", "mocha"],
+    "composite": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["**/*.spec.ts", "**/*.test.ts"],
-  "composite": true
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
 }
