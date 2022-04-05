@@ -13,10 +13,11 @@ Tests: `nx run card-game-war:test`
 - ~Create definition for card type~
 - ~Create definition of deck type~
 - ~implement unshuffled deck~
-- implement Deck.shuffle()
-- implement Deck.draw()
-- implement Hand class
-- implement card compare logic
+- ~implement Deck.shuffle()~
+- ~implement Deck.draw()~
+- ~implement Hand type~
+- ~implement card compare logic~
+- finish implementing Deck.deal() 
 - implement kata-cli (using the library commander)
     - implement "play war" function?    
 

@@ -59,9 +59,14 @@ export class Deck implements BasicDeck {
       [this.cards[currentIndex], this.cards[randomIndex]] = [
         this.cards[randomIndex], this.cards[currentIndex]];
     }
-  };
+  }
+  // WIP
+  // deal(numPlayers: number): Array<Hand> {
+  //   const hand: Array<Card> = [];
+  //   hand[0] = { "suit": Suit.Clubs, "value": 2}
+  //   return [{'cards' : hand}]
+  // } 
 };
-
 export function doesMyCardWin(myCard: Card, notMyCard: Card): boolean {
   return myCard.value > notMyCard.value;
 }
