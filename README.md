@@ -4,12 +4,11 @@
 
 **Usage:** _Run all commands from the root directory of the project_
 
--Setup Locally: `npm i `
+- Setup Locally: `npm i `
 
--Build: `nx run card-game-war:build`
+- Build: `nx run card-game-war:build`
 
--Tests:`nx run card-game-war:test`
-
+- Tests:`nx run card-game-war:test`
 
 **TODO**
 
