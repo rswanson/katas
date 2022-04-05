@@ -3,6 +3,7 @@ import {
   Deck,
   Suit,
   doesMyCardWin,
+  Hand,
 } from './card-game-war-dumb';
 
 describe('the basics', () => {
@@ -39,5 +40,25 @@ describe('the basics', () => {
     const enemyCard = { suit: Suit.Clubs, value: 2 };
     expect(doesMyCardWin(myCard, enemyCard)).toBe(true);
   });
-  // it('should tell me my card is bigger')
+  it('should deal the entire deck for a 1 player game', () => {
+    const deck: Deck = new Deck();
+    const deck2 = new Deck();
+    const hand: Hand = { 'cards' : []}
+    deck.cards.forEach(card => {
+        hand.cards.push(card)
+    });
+    const dealtHand = deck.deal(1)
+    console.log(dealtHand[0].cards)
+    expect(hand.cards).toEqual(dealtHand[0].cards.reverse())
+  });
+  it('should deal half the deck to each player for a 2 player game', () => {
+    const deck: Deck = new Deck();
+    const hand: Hand = { 'cards' : []}
+    deck.cards.forEach(card => {
+        hand.cards.push(card)
+    });
+    const dealtHand = deck.deal(2)
+    expect(dealtHand[1].cards.length).toEqual(dealtHand[0].cards.length)
+  });
+
 });

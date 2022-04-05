@@ -10,7 +10,7 @@ type Card = {
   value: number;
 };
 
-type Hand = {
+export type Hand = {
   cards: Array<Card>;
 };
 
@@ -62,11 +62,22 @@ export class Deck implements BasicDeck {
     }
   }
   // WIP
-  // deal(numPlayers: number): Array<Hand> {
-  //   const hand: Array<Card> = [];
-  //   hand[0] = { "suit": Suit.Clubs, "value": 2}
-  //   return [{'cards' : hand}]
-  // }
+  deal(numPlayers: number): Array<Hand> {
+    const hands: Array<Hand> = [];
+    for(let i = 0; i < 52; i++) {
+      for (let j = 0; j < numPlayers; j++){
+        const card = this.draw()
+        if (i < numPlayers){
+          const hand: Hand = { "cards" : [card]}
+          hands[j] = hand
+        }
+        else  {
+          hands[j].cards.push(card)
+        }
+      }
+    }
+    return hands
+  }
 }
 export function doesMyCardWin(myCard: Card, notMyCard: Card): boolean {
   return myCard.value > notMyCard.value;
