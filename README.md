@@ -2,9 +2,17 @@
 
 ### card-game-war
 
-**Usage**
-_Run all commands from the root directory of the project_
-Setup Locally: `npm i Build: `nx run card-game-war:build`Tests:`nx run card-game-war:test`
+**Usage:** _Run all commands from the root directory of the project_
+
+- Setup Locally:
+  `npm i `
+
+- Build:
+  `nx run card-game-war:build`
+
+- Tests:
+  `nx run card-game-war:test`
+  
 
 **TODO**
 
