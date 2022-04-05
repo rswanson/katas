@@ -23,6 +23,7 @@
 - ~implement Deck.draw()~
 - ~implement Hand type~
 - ~implement card compare logic~
-- finish implementing Deck.deal()
+- ~finish implementing Deck.deal()~
 - implement kata-cli (using the library commander)
   - implement "play war" function?
+- implement github actions for build and test
