@@ -1,4 +1,4 @@
-export enum Suit {
+export const enum Suit {
   Clubs,
   Diamonds,
   Hearts,

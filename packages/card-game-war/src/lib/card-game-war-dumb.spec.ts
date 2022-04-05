@@ -8,8 +8,17 @@ describe('the basics', () => {
     const deck = new Deck();
     expect(deck.cards.length).toBe(52);
     for (let i = 0; i < 52; i++)  {
-      const val: number = (i % 13) + 2;
+      const val = (i % 13) + 2;
       expect(deck.cards[i].value).toEqual(val);
+      if (i < 13)
+        expect(deck.cards[i].suit).toEqual(Suit.Clubs);
+      if ( i > 12  && i < 26)
+        expect(deck.cards[i].suit).toEqual(Suit.Diamonds);
+      if ( i > 25  && i < 39)
+        expect(deck.cards[i].suit).toEqual(Suit.Hearts);
+      if ( i > 38)
+        expect(deck.cards[i].suit).toEqual(Suit.Spades);
+
     }
   });
   it('should draw a card', () => {
