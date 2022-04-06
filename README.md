@@ -25,5 +25,6 @@
 - ~implement card compare logic~
 - ~finish implementing Deck.deal()~
 - implement kata-cli (using the library commander)
+  - figure out unit tests for main.ts in kata-cli
   - implement "play war" function?
 - implement github actions for build and test
