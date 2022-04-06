@@ -2,7 +2,7 @@ import {
   cardGameDeckDumb,
   Deck,
   Suit,
-  doesMyCardWin,
+  war,
   Hand,
 } from './card-game-war-dumb';
 
@@ -38,7 +38,7 @@ describe('the basics', () => {
   it('should be able to tell you if your card wins or not', () => {
     const myCard = { suit: Suit.Clubs, value: 4 };
     const enemyCard = { suit: Suit.Clubs, value: 2 };
-    expect(doesMyCardWin(myCard, enemyCard)[0]).toEqual([myCard,enemyCard]);
+    expect(war(myCard, enemyCard)[0]).toEqual([myCard, enemyCard]);
   });
   it('should deal the entire deck for a 1 player game', () => {
     const deck: Deck = new Deck();

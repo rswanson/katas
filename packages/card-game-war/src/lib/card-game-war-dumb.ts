@@ -78,11 +78,9 @@ export class Deck implements BasicDeck {
     return hands;
   }
 }
-export function doesMyCardWin(myCard: Card, notMyCard: Card): Array<Array<Card>> {
-  if (myCard.value > notMyCard.value)
-    return [[myCard, notMyCard],[]];
-  else 
-    return [[],[myCard,notMyCard]] ;
+export function war(myCard: Card, notMyCard: Card): Array<Array<Card>> {
+  if (myCard.value > notMyCard.value) return [[myCard, notMyCard], []];
+  else return [[], [myCard, notMyCard]];
 }
 
 export function cardGameDeckDumb(): string {
