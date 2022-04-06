@@ -1,10 +1,4 @@
-import {
-  cardGameDeckDumb,
-  Deck,
-  Suit,
-  war,
-  Hand,
-} from './card-game-war-dumb';
+import { cardGameDeckDumb, Deck, Suit, war, Hand } from './card-game-war-dumb';
 
 describe('the basics', () => {
   it('should work', () => {
