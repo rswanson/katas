@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "package-cli" : "pkg ./dist/packages/kata-cli/*.js --targets node14-macos-x64 --output ./dist/kata-cli/kata-cli"
+    "package-cli": "pkg ./dist/packages/kata-cli/*.js --targets node14-macos-x64 --output ./dist/kata-cli/kata-cli"
   },
   "private": true,
   "devDependencies": {
