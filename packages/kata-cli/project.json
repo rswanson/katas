@@ -1,15 +1,35 @@
 {
   "root": "packages/kata-cli",
   "sourceRoot": "packages/kata-cli/src",
+  "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nrwl/node:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/kata-cli",
-        "main": "packages/kata-cli/src/index.ts",
-        "tsConfig": "packages/kata-cli/tsconfig.lib.json",
-        "assets": ["packages/kata-cli/*.md"]
+        "main": "packages/kata-cli/src/main.ts",
+        "tsConfig": "packages/kata-cli/tsconfig.app.json",
+        "assets": ["packages/kata-cli/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "packages/kata-cli/src/environments/environment.ts",
+              "with": "packages/kata-cli/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "kata-cli:build"
       }
     },
     "lint": {
