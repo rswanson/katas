@@ -10,7 +10,7 @@ yargs(hideBin(process.argv))
       return yargs;
     },
     (argv) => {
-      console.log('done');
+      console.log(argv);
     }
   )
   .option('verbose', {
