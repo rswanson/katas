@@ -38,7 +38,7 @@ describe('the basics', () => {
   it('should be able to tell you if your card wins or not', () => {
     const myCard = { suit: Suit.Clubs, value: 4 };
     const enemyCard = { suit: Suit.Clubs, value: 2 };
-    expect(doesMyCardWin(myCard, enemyCard)).toBe(true);
+    expect(doesMyCardWin(myCard, enemyCard)[0]).toEqual([myCard,enemyCard]);
   });
   it('should deal the entire deck for a 1 player game', () => {
     const deck: Deck = new Deck();
@@ -47,7 +47,6 @@ describe('the basics', () => {
       hand.cards.push(card);
     });
     const dealtHand = deck.deal(1);
-    console.log(dealtHand[0].cards);
     expect(hand.cards).toEqual(dealtHand[0].cards.reverse());
   });
   it('should deal half the deck to each player for a 2 player game', () => {
