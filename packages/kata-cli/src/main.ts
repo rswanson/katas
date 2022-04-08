@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import yargs from 'yargs/yargs';
+import yargs = require('yargs/yargs');
 import { hideBin } from 'yargs/helpers';
 
 yargs(hideBin(process.argv))
