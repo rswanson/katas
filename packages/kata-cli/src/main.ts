@@ -13,9 +13,21 @@ yargs(hideBin(process.argv))
       console.log(argv);
     }
   )
+  .command(
+    'play [handIndex]',
+    'play a card from your hand',
+    (yargs) => {
+      return yargs;
+    },
+    (argv) => {
+      console.log(argv);
+    }
+  )
   .option('verbose', {
     alias: 'v',
     type: 'boolean',
     description: 'Run with verbose logging',
   })
   .parse();
+
+  
