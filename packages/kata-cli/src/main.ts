@@ -29,5 +29,3 @@ yargs(hideBin(process.argv))
     description: 'Run with verbose logging',
   })
   .parse();
-
-  
