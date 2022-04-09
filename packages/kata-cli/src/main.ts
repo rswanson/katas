@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import yargs from 'yargs/yargs';
+import yargs = require('yargs/yargs');
 import { hideBin } from 'yargs/helpers';
 
 yargs(hideBin(process.argv))
@@ -10,7 +10,17 @@ yargs(hideBin(process.argv))
       return yargs;
     },
     (argv) => {
-      console.log('done');
+      console.log(argv);
+    }
+  )
+  .command(
+    'play [handIndex]',
+    'play a card from your hand',
+    (yargs) => {
+      return yargs;
+    },
+    (argv) => {
+      console.log(argv);
     }
   )
   .option('verbose', {

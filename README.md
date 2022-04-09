@@ -24,7 +24,8 @@
 - ~implement Hand type~
 - ~implement card compare logic~
 - ~finish implementing Deck.deal()~
-- implement kata-cli (using the library commander)
+- implement kata-cli (using the library yargs)
   - figure out unit tests for main.ts in kata-cli
   - implement "play war" function?
 - implement github actions for build and test
+- make README way more detailed for all the little nuances and how stuff works together -> wiki?
