@@ -11,7 +11,7 @@ yargs(hideBin(process.argv))
     },
     handler: (argv) => {
       console.log(argv.numPlayers);
-    }
+    },
   })
   .command({
     command: 'play [handIndex]',
@@ -21,7 +21,7 @@ yargs(hideBin(process.argv))
     },
     handler: (argv) => {
       console.log(argv.handIndex);
-    }
+    },
   })
   .option('verbose', {
     alias: 'v',
