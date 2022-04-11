@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx prettier --write . | git add 
+npx pretty-quick --staged
 nx test card-game-war 
