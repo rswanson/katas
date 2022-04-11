@@ -2,4 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npx pretty-quick --staged
-nx test card-game-war 
+nx test card-game-war --quiet
