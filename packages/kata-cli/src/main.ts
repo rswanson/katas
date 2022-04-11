@@ -3,26 +3,26 @@ import yargs = require('yargs/yargs');
 import { hideBin } from 'yargs/helpers';
 
 yargs(hideBin(process.argv))
-  .command(
-    'deal [numPlayers]',
-    'deal out a game for numPlayers number of players',
-    (yargs) => {
+  .command({
+    command: 'deal [numPlayers]',
+    describe: 'deal out a game for numPlayers number of players',
+    builder: (yargs) => {
       return yargs;
     },
-    (argv) => {
-      console.log(argv);
-    }
-  )
-  .command(
-    'play [handIndex]',
-    'play a card from your hand',
-    (yargs) => {
+    handler: (argv) => {
+      console.log(argv.numPlayers);
+    },
+  })
+  .command({
+    command: 'play [handIndex]',
+    describe: 'play a card from your hand',
+    builder: (yargs) => {
       return yargs;
     },
-    (argv) => {
-      console.log(argv);
-    }
-  )
+    handler: (argv) => {
+      console.log(argv.handIndex);
+    },
+  })
   .option('verbose', {
     alias: 'v',
     type: 'boolean',
