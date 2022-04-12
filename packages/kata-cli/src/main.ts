@@ -10,6 +10,7 @@ yargs(hideBin(process.argv))
     builder: (yargs) => {
       return yargs;
     },
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     handler: (argv) => {
       const deck = new Deck();
       deck.shuffle();
