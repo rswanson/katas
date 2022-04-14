@@ -25,7 +25,8 @@
 - ~implement card compare logic~
 - ~finish implementing Deck.deal()~
 - implement kata-cli (using the library yargs)
-  - figure out unit tests for main.ts in kata-cli
+  - figure out e2e tests for kata-cli
   - implement "play war" function?
-- implement github actions for build and test
+    - Need either a semi-persistent data store to keep state in or I need to make the war command interactive for the duration of the game
+- ~implement github actions for build and test~
 - make README way more detailed for all the little nuances and how stuff works together -> wiki?
