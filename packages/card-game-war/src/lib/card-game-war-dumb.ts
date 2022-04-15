@@ -61,7 +61,6 @@ export class Deck implements BasicDeck {
       ];
     }
   }
-  // WIP
   deal(numPlayers: number): Array<Hand> {
     const hands: Array<Hand> = [];
     for (let i = 0; i < 52; i++) {
