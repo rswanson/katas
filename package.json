@@ -10,7 +10,7 @@
   "devDependencies": {
     "@nrwl/cli": "14.3.6",
     "@nrwl/eslint-plugin-nx": "^14.3.6",
-    "@nrwl/jest": "^14.3.6",
+    "@nrwl/jest": "^15.3.3",
     "@nrwl/js": "14.3.6",
     "@nrwl/linter": "^14.3.6",
     "@nrwl/node": "^14.3.6",
