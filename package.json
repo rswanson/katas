@@ -12,7 +12,7 @@
     "@nrwl/eslint-plugin-nx": "^14.3.6",
     "@nrwl/jest": "^15.4.4",
     "@nrwl/js": "14.3.6",
-    "@nrwl/linter": "^14.3.6",
+    "@nrwl/linter": "^15.9.1",
     "@nrwl/node": "^14.3.6",
     "@nrwl/workspace": "^14.3.6",
     "@types/jest": "^28.1.2",
